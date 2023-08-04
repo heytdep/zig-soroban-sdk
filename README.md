@@ -14,7 +14,7 @@ Ultimately I aim to make the sdk complete (all conversions, support for host fun
     - bool
     - void
     - u32, i32
-    - u64Small
+    - u64Small, i64small
 
 - host functions
     - none
