@@ -526,7 +526,131 @@
       "value": {
         "xdr": "AAAAA5pfQ/4="
       }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "18",
+      "ledgerClosedAt": "1970-01-01T00:01:30Z",
+      "id": "0000000077309415425-0000000001",
+      "pagingToken": "0000000077309415425-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAhtdWx0aXBseQ=="
+      ],
+      "value": {
+        "xdr": "AAAAEAAAAAEAAAAEAAAAA00vof8AAAADAAAAAgAAAAMAAAABAAAAAwAAAAE="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "18",
+      "ledgerClosedAt": "1970-01-01T00:01:30Z",
+      "id": "0000000077309415425-0000000002",
+      "pagingToken": "0000000077309415425-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAhtdWx0aXBseQ=="
+      ],
+      "value": {
+        "xdr": "AAAAA5pfQ/4="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "19",
+      "ledgerClosedAt": "1970-01-01T00:01:35Z",
+      "id": "0000000081604382721-0000000001",
+      "pagingToken": "0000000081604382721-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAhtdWx0aXBseQ=="
+      ],
+      "value": {
+        "xdr": "AAAAEAAAAAEAAAAEAAAAA00vof8AAAADAAAAAgAAAAMAAAABAAAAAwAAAAE="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "19",
+      "ledgerClosedAt": "1970-01-01T00:01:35Z",
+      "id": "0000000081604382721-0000000002",
+      "pagingToken": "0000000081604382721-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAhtdWx0aXBseQ=="
+      ],
+      "value": {
+        "xdr": "AAAAA5pfQ/4="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "20",
+      "ledgerClosedAt": "1970-01-01T00:01:40Z",
+      "id": "0000000085899350017-0000000001",
+      "pagingToken": "0000000085899350017-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAxtdWx0aXBseV9pMzI="
+      ],
+      "value": {
+        "xdr": "AAAAEAAAAAEAAAACAAAABAAAAAMAAAAEAAAABQ=="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "20",
+      "ledgerClosedAt": "1970-01-01T00:01:40Z",
+      "id": "0000000085899350017-0000000002",
+      "pagingToken": "0000000085899350017-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAxtdWx0aXBseV9pMzI="
+      ],
+      "value": {
+        "xdr": "AAAABAAAAA8="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "21",
+      "ledgerClosedAt": "1970-01-01T00:01:45Z",
+      "id": "0000000090194317313-0000000001",
+      "pagingToken": "0000000090194317313-0000000001",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000000",
+      "topic": [
+        "AAAADwAAAAdmbl9jYWxsAA==",
+        "AAAADQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==",
+        "AAAADwAAAAxtdWx0aXBseV9pMzI="
+      ],
+      "value": {
+        "xdr": "AAAAEAAAAAEAAAACAAAABAAAAAMAAAAE////+w=="
+      }
+    },
+    {
+      "type": "diagnostic",
+      "ledger": "21",
+      "ledgerClosedAt": "1970-01-01T00:01:45Z",
+      "id": "0000000090194317313-0000000002",
+      "pagingToken": "0000000090194317313-0000000002",
+      "contractId": "0000000000000000000000000000000000000000000000000000000000000001",
+      "topic": [
+        "AAAADwAAAAlmbl9yZXR1cm4AAAA=",
+        "AAAADwAAAAxtdWx0aXBseV9pMzI="
+      ],
+      "value": {
+        "xdr": "AAAABP////E="
+      }
     }
   ],
-  "latestLedger": 17
+  "latestLedger": 21
 }

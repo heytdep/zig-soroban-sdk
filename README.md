@@ -6,9 +6,18 @@ Zig SDK for writing [Soroban](https://soroban.stellar.org/) contracts.
 
 Introducing a Zig SDK offers distinct advantages: zig provides an exceptional level of control over their code (for example carefully choosing performance or safety for every operation depending on the needs). Moreover, Zig's first-class WebAssembly compilation compatibility aligns perfectly with the Soroban virtual machine. Lastly, this SDK expands the language options for Soroban developers contributing to a more adaptable ecosystem. 
 
-## WIP
+## Progress
 
-The SDK currently only supports contracts that deal with `u32`s (the beginning of this Zig -> Soroban experiment). But ultimately I aim to make it complete.
+Ultimately I aim to make the sdk complete (all conversions, support for host functions) and make it ergonomic. This is the current progress:
+
+- conversions
+    - bool
+    - void
+    - u32, i32
+    - u64Small
+
+- host functions
+    - none
 
 Also, there is no spec generation for the contracts currently (although it's a P1 feature), so you'll either have to first write the contract's interface in rust and then manually inject WASM bytecode from the rust contract's wasm custom section to Zig's wasm, or you can use the RPC (or js soroban client) instead of the CLI and only inject the contract env meta (so you don't have to write the rust contract).
 

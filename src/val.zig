@@ -14,31 +14,31 @@ const MINOR_MASK: u64 = (ONE << MINOR_BITS) - 1;
 pub const Val = packed struct {
     inner: u64,
 
-    fn getTagU8(self: Val) u8 {
+    pub fn getTagU8(self: Val) u8 {
         return @intCast(self.inner & TAG_MASK);
     }
 
-    fn hasTag(self: Val, tag: u8) bool {
+    pub fn hasTag(self: Val, tag: u8) bool {
         return getTagU8(self) == tag;
     }
 
-    fn getBody(self: Val) u64 {
+    pub fn getBody(self: Val) u64 {
         return self.inner >> TAG_BITS;
     }
 
-    fn getSignedBody(self: Val) i64 {
+    pub fn getSignedBody(self: Val) i64 {
         return @as(i64, @intCast(self.inner)) >> TAG_BITS;
     }
 
-    fn fromBodyAndTag(body: u64, tag: ValTag) Val {
+    pub fn fromBodyAndTag(body: u64, tag: ValTag) Val {
         return Val{ .inner = (body << TAG_BITS) | @as(u64, @intCast(tag.repr())) };
     }
 
-    fn fromMajorMinorAndTag(major: u32, minor: u32, tag: ValTag) Val {
+    pub fn fromMajorMinorAndTag(major: u32, minor: u32, tag: ValTag) Val {
         return Val.fromBodyAndTag((@as(u64, major) << MINOR_BITS) | @as(u64, minor), tag);
     }
 
-    fn getMajor(self: Val) u32 {
+    pub fn getMajor(self: Val) u32 {
         return @intCast(self.getBody() >> MINOR_BITS);
     }
 };
@@ -58,7 +58,7 @@ test "tag assetions" {
 /// but cover all those cases as well as some optimized refinements for
 /// special cases (boolean true and false, small-value forms).
 /// https://github.com/stellar/rs-soroban-env/blob/main/soroban-env-common/src/val.rs#L46
-const ValTag = enum(u8) {
+pub const ValTag = enum(u8) {
     val_false = 0,
     val_true = 1,
     val_void = 2,
@@ -104,66 +104,13 @@ test "enum representation" {
     try expect(ValTag.val_u32.repr() == 4);
 }
 
-pub const U32 = struct {
-    inner: u32,
+// TYPE to VAL and VAL to TYPE conversions.
+// Below are defined and implemented wrapper
+// types designed to interact with Soroban.
+// These types implement conversions from and to Val.
 
-    pub fn new(value: u32) U32 {
-        return U32{ .inner = value };
-    }
-
-    pub fn getInner(self: U32) u32 {
-        return self.inner;
-    }
-
-    pub fn from_val(val: Val) error{ConversionError}!U32 {
-        if (!val.hasTag(ValTag.val_u32.repr())) {
-            return error.ConversionError;
-        }
-
-        return U32.new(val.getMajor());
-    }
-
-    pub fn to_val(self: U32) Val {
-        return Val.fromMajorMinorAndTag(self.getInner(), 0, ValTag.val_u32);
-    }
-
-    pub fn add(self: U32, rhs: U32) U32 {
-        @setRuntimeSafety(true);
-        return U32{ .inner = self.inner + rhs.inner };
-    }
-
-    pub fn sub(self: U32, rhs: U32) U32 {
-        @setRuntimeSafety(true);
-        return U32{ .inner = self.inner - rhs.inner };
-    }
-
-    pub fn mul(self: U32, rhs: U32) U32 {
-        @setRuntimeSafety(true);
-        return U32{ .inner = self.inner * rhs.inner };
-    }
-
-    pub fn div(self: U32, rhs: U32) U32 {
-        @setRuntimeSafety(true);
-        return U32{ .inner = self.inner / rhs.inner };
-    }
-
-    pub fn add_unsafe(self: U32, rhs: U32) U32 {
-        return U32{ .inner = self.inner + rhs.inner };
-    }
-
-    pub fn sub_unsafe(self: U32, rhs: U32) U32 {
-        return U32{ .inner = self.inner - rhs.inner };
-    }
-
-    pub fn mul_unsafe(self: U32, rhs: U32) U32 {
-        return U32{ .inner = self.inner * rhs.inner };
-    }
-
-    pub fn div_unsafe(self: U32, rhs: U32) U32 {
-        return U32{ .inner = self.inner / rhs.inner };
-    }
-};
-
-test "u32" {
-    //const a = U32
-}
+pub const U32 = @import("./u32.zig").U32;
+pub const Bool = @import("./bool.zig").Bool;
+pub const Void = @import("./void.zig").Void;
+pub const I32 = @import("./i32.zig").I32;
+pub const U64Small = @import("./u64_small.zig").U64Small;
