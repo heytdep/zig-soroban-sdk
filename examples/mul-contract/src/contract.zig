@@ -3,6 +3,7 @@ const Val = soroban_sdk.val.Val;
 const U32 = soroban_sdk.val.U32;
 const I32 = soroban_sdk.val.I32;
 const U64Small = soroban_sdk.val.U64Small;
+const I64Small = soroban_sdk.val.I64Small;
 const Bool = soroban_sdk.val.Bool;
 const Void = soroban_sdk.val.Void;
 
@@ -36,6 +37,14 @@ export fn multiply_u64small(a_: Val, b_: Val) Val {
     @setRuntimeSafety(true);
     const a = U64Small.from_val(a_) catch unreachable;
     const b = U64Small.from_val(b_) catch unreachable;
+
+    return a.mul(b).to_val();
+}
+
+export fn multiply_i64small(a_: Val, b_: Val) Val {
+    @setRuntimeSafety(true);
+    const a = I64Small.from_val(a_) catch unreachable;
+    const b = I64Small.from_val(b_) catch unreachable;
 
     return a.mul(b).to_val();
 }

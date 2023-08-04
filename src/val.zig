@@ -114,3 +114,4 @@ pub const Bool = @import("./bool.zig").Bool;
 pub const Void = @import("./void.zig").Void;
 pub const I32 = @import("./i32.zig").I32;
 pub const U64Small = @import("./u64_small.zig").U64Small;
+pub const I64Small = @import("./i64_smal.zig").I64Small;

@@ -6,13 +6,16 @@ const ValTag = val_mod.ValTag;
 /// Also implements simple arithmetic operations, both
 /// safe and unsafe.
 pub const U64Small = struct {
-    inner: u32,
+    inner: u64,
 
-    pub fn new(value: u32) U64Small {
+    pub fn new(value: u64) U64Small {
+        // TODO: implement is small check:
+        // https://github.com/stellar/rs-soroban-env/blob/main/soroban-env-common/src/num.rs#L392
+
         return U64Small{ .inner = value };
     }
 
-    pub fn getInner(self: U64Small) u32 {
+    pub fn getInner(self: U64Small) u64 {
         return self.inner;
     }
 
@@ -21,11 +24,11 @@ pub const U64Small = struct {
             return error.ConversionError;
         }
 
-        return U64Small.new(val.getMajor());
+        return U64Small.new(val.getBody());
     }
 
     pub fn to_val(self: U64Small) Val {
-        return Val.fromMajorMinorAndTag(self.getInner(), 0, ValTag.val_u64_small);
+        return Val.fromBodyAndTag(@intCast(self.getInner()), ValTag.val_u64_small);
     }
 
     pub fn add(self: U64Small, rhs: U64Small) U64Small {
