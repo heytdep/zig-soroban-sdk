@@ -15,6 +15,11 @@ Ultimately I aim to make the sdk complete (all conversions, support for host fun
     - void
     - u32, i32
     - u64Small, i64small
+    - TimepointSmall
+    - DurationSmall
+    - u128small, i128small
+        - these two still need safer math ops
+    
 
 - host functions
     - none

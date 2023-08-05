@@ -103,15 +103,3 @@ test "enum representation" {
     const expect = @import("std").testing.expect;
     try expect(ValTag.val_u32.repr() == 4);
 }
-
-// TYPE to VAL and VAL to TYPE conversions.
-// Below are defined and implemented wrapper
-// types designed to interact with Soroban.
-// These types implement conversions from and to Val.
-
-pub const U32 = @import("./u32.zig").U32;
-pub const Bool = @import("./bool.zig").Bool;
-pub const Void = @import("./void.zig").Void;
-pub const I32 = @import("./i32.zig").I32;
-pub const U64Small = @import("./u64_small.zig").U64Small;
-pub const I64Small = @import("./i64_smal.zig").I64Small;
