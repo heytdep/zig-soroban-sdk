@@ -18,7 +18,7 @@ Ultimately I aim to make the sdk complete (all conversions, support for host fun
     - TimepointSmall
     - DurationSmall
     - u128small, i128small
-        - these two still need safer math ops
+    - u256, i256
     
 
 - host functions

@@ -8,6 +8,8 @@ const Bool = soroban_sdk.Bool;
 const Void = soroban_sdk.Void;
 const U128Small = soroban_sdk.U128Small;
 const I128Small = soroban_sdk.I128Small;
+const U256Small = soroban_sdk.U256Small;
+const I256Small = soroban_sdk.I256Small;
 
 export fn assert_bool_return_void(value_: Val) Val {
     if ((Bool.from_val(value_) catch unreachable).getInner()) {
@@ -63,6 +65,22 @@ export fn multiply_i128small(a_: Val, b_: Val) Val {
     @setRuntimeSafety(true);
     const a = I128Small.from_val(a_) catch unreachable;
     const b = I128Small.from_val(b_) catch unreachable;
+
+    return a.mul(b).to_val();
+}
+
+export fn multiply_u256small(a_: Val, b_: Val) Val {
+    @setRuntimeSafety(true);
+    const a = U256Small.from_val(a_) catch unreachable;
+    const b = U256Small.from_val(b_) catch unreachable;
+
+    return a.mul(b).to_val();
+}
+
+export fn multiply_i256small(a_: Val, b_: Val) Val {
+    @setRuntimeSafety(true);
+    const a = I256Small.from_val(a_) catch unreachable;
+    const b = I256Small.from_val(b_) catch unreachable;
 
     return a.mul(b).to_val();
 }
