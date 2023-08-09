@@ -155,3 +155,5 @@ cpu mem bytes consumed: 1188363
 ```
 
 Although I suspect the discepancy to be because zig wasm size is still smaller than rusts.
+
+Edit: as a matter of fact it seems that the discrepancy was at least mostly driven by binary size.
