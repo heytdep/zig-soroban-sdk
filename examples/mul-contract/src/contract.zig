@@ -29,7 +29,7 @@ fn multiply(a_: Val, b_: Val, c_: Val, d_: Val) Val {
     return a.mul(b).mul(c).mul(d).to_val();
 }
 
-fn multiply_i32(a_: Val, b_: Val) Val {
+export fn multiply_i32(a_: Val, b_: Val) Val {
     @setRuntimeSafety(true);
     const a = I32.from_val(a_) catch unreachable;
     const b = I32.from_val(b_) catch unreachable;

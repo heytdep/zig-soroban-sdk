@@ -5,7 +5,7 @@ const ValTag = val_mod.ValTag;
 /// Wrapper around i32.
 /// Also implements simple arithmetic operations, both
 /// safe and unsafe.
-pub const I32 = struct {
+pub const I32 = packed struct {
     inner: i32,
 
     pub fn new(value: i32) I32 {

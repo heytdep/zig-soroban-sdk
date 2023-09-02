@@ -47,7 +47,7 @@ pub const Val = packed struct {
     }
 };
 
-test "tag assetions" {
+test "tag assertions" {
     const expect = @import("std").testing.expect;
 
     // value for u32: 42
