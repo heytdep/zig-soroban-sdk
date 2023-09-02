@@ -19,6 +19,7 @@ Ultimately I aim to make the sdk complete (all conversions, support for host fun
     - DurationSmall
     - u128small, i128small
     - u256, i256 (TODO: switch to env functions for operations).
+    - small symbols
     
 
 - host functions

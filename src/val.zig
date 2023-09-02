@@ -14,6 +14,10 @@ const MINOR_MASK: u64 = (ONE << MINOR_BITS) - 1;
 pub const Val = packed struct {
     inner: u64,
 
+    pub fn get_inner(self: Val) u64 {
+        return self.inner;
+    }
+
     pub fn getTagU8(self: Val) u8 {
         return @intCast(self.inner & TAG_MASK);
     }
